@@ -5,24 +5,20 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 
 public class Main {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int T = Integer.parseInt(br.readLine());
+		int N = Integer.parseInt(br.readLine());
 		
-		StringBuffer sb = new StringBuffer();
-		for(int i = 1; i <= T; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
-			
-			int a = Integer.parseInt(st.nextToken());
-			int b = Integer.parseInt(st.nextToken());
-			sb.append(a+b).append("\n");
+		int result = 1;
+		
+		for (int i = 1; i <= N; i++) {
+			result *= i;
 		}
-		
-		bw.write(sb.toString());
+
+		bw.write(String.valueOf(result));
 		bw.flush();
 	}
 }
